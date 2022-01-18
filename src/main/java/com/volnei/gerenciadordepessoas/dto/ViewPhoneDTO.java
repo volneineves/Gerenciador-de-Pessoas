@@ -1,27 +1,18 @@
-package com.volnei.gerenciadordepessoas.entity;
+package com.volnei.gerenciadordepessoas.dto;
 
 import com.volnei.gerenciadordepessoas.enums.PhoneType;
 
-import javax.persistence.*;
+public class ViewPhoneDTO {
 
-@Entity
-public class Phone {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
     private PhoneType type;
-
-    @Column(nullable = false)
     private String number;
 
-    public Phone() {
+    public ViewPhoneDTO() {
     }
 
-    public Phone(PhoneType type, String number) {
+    public ViewPhoneDTO(Long id, PhoneType type, String number) {
+        this.id = id;
         this.type = type;
         this.number = number;
     }
