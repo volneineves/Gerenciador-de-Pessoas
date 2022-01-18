@@ -13,7 +13,7 @@ public class PhoneDTO {
     private PhoneType type;
 
     @NotEmpty
-    @Size(min = 13, max = 16)
+    @Size(min = 9, max = 16)
     private String number;
 
     public PhoneDTO() {

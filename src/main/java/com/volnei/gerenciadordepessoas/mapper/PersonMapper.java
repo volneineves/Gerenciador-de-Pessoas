@@ -5,12 +5,14 @@ import com.volnei.gerenciadordepessoas.dto.ViewPersonDTO;
 import com.volnei.gerenciadordepessoas.dto.ViewPhoneDTO;
 import com.volnei.gerenciadordepessoas.entity.Person;
 import com.volnei.gerenciadordepessoas.entity.Phone;
+import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;
 
-public interface PersonMapper {
+@Component
+public class PersonMapper {
 
-    static Person toPerson(PersonDTO personDTO) {
+    public Person toPerson(PersonDTO personDTO) {
         return new Person(
                 personDTO.getFirstName(),
                 personDTO.getLastName(),
@@ -20,7 +22,7 @@ public interface PersonMapper {
         );
     }
 
-    static ViewPersonDTO toDTO(Person person) {
+    public ViewPersonDTO toDTO(Person person) {
         return new ViewPersonDTO(
                 person.getId(),
                 person.getFirstName(),
